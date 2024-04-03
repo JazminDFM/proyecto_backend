@@ -11,6 +11,7 @@ function color(id,r,g,b){
 	item.innerText = [r,g,b].join(",");
 	item.style.backgroundColor = `rgb(${[r,g,b].join(",")})`;
 	//Al darle click a cualquier item los borra
+	
 	item.addEventListener("click", () => {
 		fetch("/borrar/" + id, {
 			method : "DELETE"
