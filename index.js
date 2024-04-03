@@ -47,6 +47,13 @@ servidor.post("/nuevo", (peticion, respuesta) => {
 });
 
 servidor.delete("/borrar/:id", (peticion, respuesta) => {
+
+	colores = colore.filter(color => color.id != peticion.params.id);
+
+	guardarColores()
+	.then(() => respuesta.json({ resultado : "ko" }))
+	.catch(() => respuesta.json({ resultado : "ko" }));
+
 	respuesta.json({ error : "Bla bla bla" });
 });
 
